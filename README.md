@@ -17,6 +17,9 @@ CaP-X は再実装せずに呼び出し、依存する挙動には、コード�
 
 ## Tutorial
 
+ローカルの VS Code で編集して計算ノードへ送る場合は、[ローカル開発と Slurm 実行](docs/tutorial/local_remote.md)の
+スクリプトを使える。個人設定 → ローカルでの梱包 → 計算ノードでの構築・検査 → 少数データ SFT の順に進める。
+
 GMO クラウドの Slurm クラスタで、ログインから提出までを順に行う手順([docs/tutorial/](docs/tutorial/README.md))。全ての手順を丁寧に追うために用いる。
 各コードの仕様は[Documentation](#documentation)を、詳細な手順を省いた実行方法は[Quickstart](#quickstart)を参照すること。
 

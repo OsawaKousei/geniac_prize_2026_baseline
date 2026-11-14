@@ -1,0 +1,36 @@
+[project]
+name = "geniac-tutorial-base"
+version = "0.1.0"
+description = "Locked conversion, training, and test environment for the Slurm tutorial."
+requires-python = "==3.12.*"
+dependencies = [
+  "geniac-baseline",
+  # Keep the baseline training pins in requirements-train.txt.
+  "torch==2.9.1",
+  "torchvision==0.24.1",
+  "transformers",
+  "peft==0.19.1",
+  "accelerate==1.4.0",
+  "tokenizers==0.22.2",
+  "pillow==12.2.0",
+  "pyyaml==6.0.3",
+  "pytest==9.2.0",
+  "ruff==0.17.5",
+  "huggingface-hub",
+]
+
+[tool.uv]
+package = false
+environments = ["sys_platform == 'linux' and platform_machine == 'x86_64'"]
+required-environments = ["sys_platform == 'linux' and platform_machine == 'x86_64'"]
+
+[tool.uv.sources]
+geniac-baseline = { path = "../../..", editable = true }
+transformers = { git = "https://github.com/huggingface/transformers", rev = "42f189ded85d18d00b51161d694cafd325e32b91" }
+torch = { index = "pytorch-cu130" }
+torchvision = { index = "pytorch-cu130" }
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true

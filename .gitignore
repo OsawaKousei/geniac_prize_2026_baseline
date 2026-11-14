@@ -12,4 +12,9 @@ wandb/
 .ruff_cache/
 /geniac_prize_2026_code
 uv.lock
+!/remote_tutorial/envs/base/uv.lock
+!/remote_tutorial/envs/serve/uv.lock
 /ASPIRE
+/.remote.local.json
+/.remote-build/
+/tmp/

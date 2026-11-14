@@ -1,0 +1,70 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "tutorial: prepare (local)",
+      "type": "process",
+      "command": "python3",
+      "args": ["scripts/remote.py", "prepare"],
+      "options": {"cwd": "${workspaceFolder}"},
+      "problemMatcher": []
+    },
+    {
+      "label": "tutorial: plan (local)",
+      "type": "process",
+      "command": "python3",
+      "args": ["scripts/remote.py", "plan"],
+      "options": {"cwd": "${workspaceFolder}"},
+      "problemMatcher": []
+    },
+    {
+      "label": "tutorial: setup (remote CPU)",
+      "type": "process",
+      "command": "python3",
+      "args": ["scripts/remote.py", "setup"],
+      "options": {"cwd": "${workspaceFolder}"},
+      "problemMatcher": []
+    },
+    {
+      "label": "tutorial: check (remote GPU)",
+      "type": "process",
+      "command": "python3",
+      "args": ["scripts/remote.py", "check"],
+      "options": {"cwd": "${workspaceFolder}"},
+      "problemMatcher": []
+    },
+    {
+      "label": "tutorial: submit stage (remote)",
+      "type": "process",
+      "command": "python3",
+      "args": ["scripts/remote.py", "submit", "${input:tutorialStage}"],
+      "options": {"cwd": "${workspaceFolder}"},
+      "problemMatcher": []
+    },
+    {
+      "label": "tutorial: status (remote read)",
+      "type": "process",
+      "command": "python3",
+      "args": ["scripts/remote.py", "status"],
+      "options": {"cwd": "${workspaceFolder}"},
+      "problemMatcher": []
+    },
+    {
+      "label": "tutorial: logs (remote read)",
+      "type": "process",
+      "command": "python3",
+      "args": ["scripts/remote.py", "logs"],
+      "options": {"cwd": "${workspaceFolder}"},
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "tutorialStage",
+      "type": "pickString",
+      "description": "実行する Slurm ジョブの段階",
+      "options": ["collect", "convert", "sft", "eval-base", "eval-sft"],
+      "default": "collect"
+    }
+  ]
+}

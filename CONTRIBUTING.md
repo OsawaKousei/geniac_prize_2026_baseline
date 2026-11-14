@@ -1,5 +1,7 @@
 # Contributing
 
+AI エージェントによる操作には [エージェント共通の実行ルール](docs/execution_policy.md) も適用する。
+
 ## Setup
 
 ```bash
